@@ -31,7 +31,7 @@ const setPriority = async() => {
         await item.save();
     }
     )
-    console.log('All pririty of task are set');
+    console.log('All priority of task are set');
 }
 
 module.exports = setPriority;
