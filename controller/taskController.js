@@ -47,7 +47,7 @@ exports.addTask = catchAsyncErrors(async(req,res,next) => {
 exports.getUserTask = catchAsyncErrors( async(req,res,next) => {
     const resultPerPage = 2;
     var currentDate = new Date();
-    const apiFeature = new ApiFeatures(Task.find({user:req.user.id, isDeleted:false, priority:{$gte : 0}}), req.query).filter();
+    const apiFeature = new ApiFeatures(Task.find({user:req.user.id, isDeleted:false, priority:{$gte : 0}}).sort({priority:1}), req.query).filter();
      
     apiFeature.pagination(resultPerPage);
 
